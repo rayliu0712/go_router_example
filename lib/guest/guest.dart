@@ -1,0 +1,56 @@
+import 'dart:developer';
+import 'package:flutter/material.dart';
+import 'package:go_router_example/util/style.dart';
+import 'package:go_router/go_router.dart';
+
+class GuestPage extends StatelessWidget {
+  const GuestPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: SafeArea(
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 10),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Spacer(),
+              Text(
+                'Go Router 範例',
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 30),
+              ),
+              Spacer(),
+              FilledButton(
+                style: makeFilledPageButtonStyle(),
+                onPressed: () {
+                  goRegisterPage(context);
+                },
+                child: Text('註冊'),
+              ),
+              SizedBox(height: 10),
+              OutlinedButton(
+                style: makeOutlinedPageButtonStyle(),
+                onPressed: () {
+                  goLoginPage(context);
+                },
+                child: Text('登入'),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Future<void> goRegisterPage(BuildContext context) async {
+    final r = await context.push('./register');
+    log('$r');
+  }
+
+  Future<void> goLoginPage(BuildContext context) async {
+    final r = await context.push('./login');
+    log('$r');
+  }
+}
