@@ -1,6 +1,6 @@
-import "package:flutter/material.dart";
-import "package:go_router_example/util/style.dart";
-import "package:go_router/go_router.dart";
+import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:go_router_example/util/style.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({super.key});
@@ -26,7 +26,7 @@ class _RegisterPageState extends State<RegisterPage> {
       ),
       body: SafeArea(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 10),
+          padding: EdgeInsets.symmetric(horizontal: 20),
           child: Form(
             autovalidateMode: AutovalidateMode.onUnfocus,
             key: _formKey,
@@ -53,7 +53,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     border: OutlineInputBorder(),
                   ),
                 ),
-                SizedBox(height: 10),
+                SizedBox(height: 20),
                 TextFormField(
                   focusNode: _passwordFocusNode,
                   obscureText: _obscureText,
@@ -79,9 +79,9 @@ class _RegisterPageState extends State<RegisterPage> {
                 ),
                 Spacer(flex: 2),
                 FilledButton(
-                  style: makeFilledPageButtonStyle(),
+                  style: filledSoftButtonStyle(),
                   onPressed: _tryRegister,
-                  child: Text('註冊'),
+                  child: Text('註冊', style: softButtonTextStyle()),
                 ),
               ],
             ),

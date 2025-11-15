@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:go_router_example/util/style.dart';
 import 'package:go_router/go_router.dart';
+import 'package:go_router_example/util/style.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -26,7 +26,7 @@ class _LoginPageState extends State<LoginPage> {
       ),
       body: SafeArea(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 10),
+          padding: EdgeInsets.symmetric(horizontal: 20),
           child: Form(
             autovalidateMode: AutovalidateMode.onUnfocus,
             key: _formKey,
@@ -53,7 +53,7 @@ class _LoginPageState extends State<LoginPage> {
                     border: OutlineInputBorder(),
                   ),
                 ),
-                SizedBox(height: 10),
+                SizedBox(height: 20),
                 TextFormField(
                   focusNode: _passwordFocusNode,
                   textInputAction: TextInputAction.go,
@@ -83,9 +83,9 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 Spacer(flex: 2),
                 FilledButton(
-                  style: makeFilledPageButtonStyle(),
+                  style: filledSoftButtonStyle(),
                   onPressed: _tryLogIn,
-                  child: Text('登入'),
+                  child: Text('登入', style: softButtonTextStyle()),
                 ),
               ],
             ),
